@@ -5,7 +5,7 @@ type LinkStretchedProps = {
   url?: string;
   target?: string;
   cssClasses?: string;
-  onClick?: (anchorId: string, hasHref: boolean) => void;
+  onClick?: (anchorId?: string) => void;
 };
 
 const LinkStretched: FC<LinkStretchedProps> = ({
@@ -18,9 +18,9 @@ const LinkStretched: FC<LinkStretchedProps> = ({
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!url) {
       event.preventDefault();
-      onClick?.(event.currentTarget.dataset.anchorId!.substring(1), true);
+      onClick?.();
     } else {
-      onClick?.(event.currentTarget.dataset.anchorId!.substring(1), false);
+      onClick?.(event.currentTarget.dataset.anchorId!.substring(1));
     }
   };
 

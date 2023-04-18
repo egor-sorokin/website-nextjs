@@ -8,7 +8,7 @@ interface SwitcherProps {
     type: string;
     text: string;
   };
-  onClick?: (anchorId: string, hasHref: boolean) => void;
+  onClick?: (anchorId: string) => void;
 }
 
 const Switcher: FC<SwitcherProps> = ({ url = '', switcherLink, onClick = () => {} }) => {
