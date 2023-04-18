@@ -4,7 +4,6 @@ import Switcher from '@/components/Switcher';
 import DescriptionList from '@/components/DescriptionList';
 import { SWITCHER_PROJECTS } from '@/utils/constants';
 import { DescriptionItem } from '@/utils/types';
-import Image from 'next/image';
 
 interface ProjectInfo {
   id: number;
@@ -35,7 +34,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               {info && <DescriptionList listData={info}/>}
             </div>
             <div className="col col--right">
-              <Image
+              <img
                 className="image"
                 title={image.alt}
                 alt={image.alt}

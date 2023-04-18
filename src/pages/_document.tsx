@@ -8,7 +8,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-      <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,500,700&display=optional" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,500,700" rel="stylesheet" />
     </Html>
   )
 }
