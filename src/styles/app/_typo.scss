@@ -1,0 +1,92 @@
+.font-w-r {
+  font-weight: 300;
+}
+
+.font-w-m {
+  font-weight: 400;
+}
+
+.font-w-b {
+  font-weight: 700;
+}
+
+.text-t-u {
+  text-transform: uppercase;
+}
+
+.text-c-l-dune {
+  color: $duneLight;
+}
+
+.text-c-dune {
+  color: $dune;
+}
+
+.text-c-mercury-light {
+  color: $mercuryLight;
+}
+
+.text-c-mercury {
+  color: $mercury;
+}
+
+.font-s-40 {
+  font-size: 2.5em;
+  font-weight: 500;
+
+  @include breakpoint-tablet {
+    font-size: 2.0em;
+  }
+}
+
+.font-s-36 {
+  font-size: 2.2em;
+  letter-spacing: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include breakpoint-tablet {
+    font-size: 1.7em;
+  }
+}
+
+.font-s-20 {
+  font-size: 1em;
+  font-weight: 400;
+
+  @include breakpoint-tablet {
+    font-size: 1.1em;
+  }
+}
+
+.font-s-12-secondary {
+  font-family: $secondaryFont;
+  letter-spacing: 2.5px;
+}
+
+.font-s-12,
+.font-s-12-secondary {
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.font-s-18 {
+  font-size: 1.1em;
+}
+
+.font-s-16 {
+  font-size: 1em;
+
+  @include breakpoint-tablet {
+    font-size: 0.8em;
+  }
+}
+
+.font-f-def {
+  font-family: $defaultFont;
+}
+
+.font-f-sec {
+  font-family: $secondaryFont;
+}
