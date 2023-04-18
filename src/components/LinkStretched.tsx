@@ -5,7 +5,7 @@ type LinkStretchedProps = {
   url?: string;
   target?: string;
   cssClasses?: string;
-  onClick?: (anchorId?: string) => void;
+  onClick?: any;
 };
 
 const LinkStretched: FC<LinkStretchedProps> = ({
@@ -13,7 +13,7 @@ const LinkStretched: FC<LinkStretchedProps> = ({
   url,
   target,
   cssClasses = '',
-  onClick = () => {},
+  onClick,
 }) => {
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!url) {
