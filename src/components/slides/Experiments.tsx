@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Experiments: FC<Props> = ({ experiments }) => (
-  <main
+  <section
     id="experiments"
     key="experiments"
   >
@@ -37,7 +37,7 @@ const Experiments: FC<Props> = ({ experiments }) => (
       </div>
       <Switcher/>
     </section>
-  </main>
+  </section>
 );
 
 export default Experiments;

@@ -51,7 +51,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     )
   );
 
-  return <main id="projects">{projectsComponent}</main>;
+  return <section id="projects">{projectsComponent}</section>;
 };
 
 export default Projects;
