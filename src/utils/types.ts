@@ -4,15 +4,16 @@ export interface GridDataItem {
   image: string;
 }
 
-export interface DescriptionItem {
-  label: string;
+export interface LinkProps {
   url?: string;
   text: string;
 }
 
-export interface UnorderedListItem {
+export interface DescriptionItem extends LinkProps {
+  label: string;
+}
+
+export interface UnorderedListItem extends LinkProps {
   id: number;
-  url?: string;
-  text: string;
   name?: string;
 }

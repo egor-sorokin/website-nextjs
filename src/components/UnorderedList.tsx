@@ -18,12 +18,13 @@ const UnorderedList: FC<UnorderedListProps> = ({
   const cssClassesLinkMasked =
     'unorderedlist__text font-s-18 text-c-mercury-light';
 
-  const unorderedListItems = items.map(item => {
+  const unorderedListItems = items.map(({ id, text, url, name }) => {
     if (type === LINK_MASKED) {
       return (
-        <li key={item.id} className="unorderedlist__item">
+        <li key={id} className="unorderedlist__item">
           <LinkMasked
-            linkData={item}
+            text={text}
+            url={url!}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
           />
@@ -32,9 +33,9 @@ const UnorderedList: FC<UnorderedListProps> = ({
     }
 
     return (
-      <li key={item.id} className="unorderedlist__item">
-        <a href={item.url} target="_blank" className="unorderedlist__text">
-          {item.name}
+      <li key={id} className="unorderedlist__item">
+        <a href={url} target="_blank" className="unorderedlist__text">
+          {name}
         </a>
       </li>
     );

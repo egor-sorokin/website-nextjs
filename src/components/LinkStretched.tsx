@@ -1,12 +1,11 @@
 import { FC, MouseEvent } from 'react';
+import { LinkProps } from '@/utils/types';
 
-type LinkStretchedProps = {
-  text?: string;
-  url?: string;
+interface LinkStretchedProps extends LinkProps {
   target?: string;
   cssClasses?: string;
-  onClick?: any;
-};
+  onClick: any;
+}
 
 const LinkStretched: FC<LinkStretchedProps> = ({
   text,

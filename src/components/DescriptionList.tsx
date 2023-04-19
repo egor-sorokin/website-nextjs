@@ -22,24 +22,27 @@ const DescriptionList: FC<DescriptionListProps> = ({ listData }) => {
       </li>
     );
   } else {
-    component = listData.map((item: DescriptionItem, i: number) => (
-      <li key={i + 1} className="description-list__item item">
-        <h6 className="item__title font-s-12-secondary">{item.label}</h6>
-        {item.url ? (
-          <div className="item__link">
-            <LinkMasked
-              linkData={item}
-              cssClasses={cssClassesLinkMasked}
-              target="_blank"
-            />
-          </div>
-        ) : (
-          <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">
-            {item.text}
-          </p>
-        )}
-      </li>
-    ));
+    component = listData.map(
+      ({ url, text, label }: DescriptionItem, i: number) => (
+        <li key={i + 1} className="description-list__item item">
+          <h6 className="item__title font-s-12-secondary">{label}</h6>
+          {url ? (
+            <div className="item__link">
+              <LinkMasked
+                text={text}
+                url={url}
+                cssClasses={cssClassesLinkMasked}
+                target="_blank"
+              />
+            </div>
+          ) : (
+            <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">
+              {text}
+            </p>
+          )}
+        </li>
+      )
+    );
   }
 
   return <ul className="description-list">{component}</ul>;

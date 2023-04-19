@@ -15,7 +15,7 @@ interface Props {
   toggleAboutSection: () => void;
 }
 
-const Home: FC<Props> = ({ person, toggleAboutSection = () => {} }) => {
+const Home: FC<Props> = ({ person, toggleAboutSection }) => {
   const homeRef = useRef<HTMLElement | null>(null);
   const homeTween = useRef<TimelineMax | null>(null);
 
@@ -23,7 +23,7 @@ const Home: FC<Props> = ({ person, toggleAboutSection = () => {} }) => {
     if (homeRef.current) {
       homeTween.current = new TimelineMax();
       attachShowAnimation(homeTween.current);
-      homeTween.current!.play();
+      homeTween.current?.play();
     }
   }, [homeRef]);
 

@@ -7,6 +7,7 @@ import OrderedList from '@/components/OrderedList';
 import LinkStretched from '@/components/LinkStretched';
 import { BUTTON_CLOSE, LINK_MASKED } from '@/utils/constants';
 import Logo from '@/components/Logo';
+import { LinkProps } from '@/utils/types';
 
 interface Props {
   person: {
@@ -14,12 +15,12 @@ interface Props {
     last_name?: string;
     socials?: {
       title: string;
-      items: Array<{
-        id: string;
-        url: string;
-        name?: string;
-        text?: string;
-      }>;
+      items: Array<
+        LinkProps & {
+          id: string;
+          name?: string;
+        }
+      >;
     };
     summary?: Array<{ title: string; text: string }>;
   };
@@ -30,7 +31,7 @@ interface Props {
 const About: FC<Props> = ({
   person = {},
   isOpenedAbout,
-  toggleAboutSection = () => {},
+  toggleAboutSection,
 }) => {
   const aboutTween = useRef<TimelineMax | null>(null);
   const socials = person?.socials || { title: '', items: [] };

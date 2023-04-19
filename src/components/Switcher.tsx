@@ -11,11 +11,7 @@ interface SwitcherProps {
   onClick?: (anchorId: string) => void;
 }
 
-const Switcher: FC<SwitcherProps> = ({
-  url = '',
-  switcherLink,
-  onClick = () => {},
-}) => {
+const Switcher: FC<SwitcherProps> = ({ url = '', switcherLink, onClick }) => {
   let link: JSX.Element | null = null;
   let type;
   let text;
@@ -30,15 +26,15 @@ const Switcher: FC<SwitcherProps> = ({
       <LinkStretched
         cssClasses="switcher__link font-s-12-secondary text-c-mercury-light"
         text={text}
-        onClick={onClick!}
+        onClick={onClick}
       />
     );
-  } else if (url) {
+  } else if (url && text) {
     link = (
       <LinkStretched
         cssClasses="switcher__link font-s-12-secondary text-c-dune"
         text={text}
-        onClick={onClick!}
+        onClick={onClick}
         url={url}
         target="_blank"
       />

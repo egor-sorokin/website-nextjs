@@ -2,9 +2,10 @@ import { FC } from 'react';
 
 import LinkStretched from '@/components/LinkStretched';
 import scrollToSection from '@/utils/helpers';
+import { LinkProps } from '@/utils/types';
 
 interface NavbarProps {
-  items: Array<{ url: string; text: string }>;
+  items: LinkProps[];
 }
 
 const Navbar: FC<NavbarProps> = ({ items = [] }) => {
@@ -15,7 +16,7 @@ const Navbar: FC<NavbarProps> = ({ items = [] }) => {
     <li key={i + 1} className="navbar__item">
       <LinkStretched
         cssClasses={cssClassesLinkStretched}
-        url={item.url}
+        url={item.url!}
         text={item.text}
         onClick={scrollToSection}
       />

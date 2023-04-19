@@ -2,10 +2,15 @@ import React, { FC } from 'react';
 
 import LinkMasked from '@/components/LinkMasked';
 import { LINK_MASKED } from '@/utils/constants';
+import { LinkProps } from '@/utils/types';
 
 interface OrderedListProps {
   title?: string;
-  items?: Array<{ id: string; url: string; name?: string; text?: string }>;
+  items?: Array<
+    LinkProps & {
+      id: string;
+    }
+  >;
   type?: string;
 }
 
@@ -16,13 +21,14 @@ const OrderedList: FC<OrderedListProps> = ({
 }) => {
   const cssClassesLinkMasked =
     'orderedlist__text font-s-18 text-c-mercury-light';
-  const orderedListItems = items?.map(item => {
+  const orderedListItems = items?.map(({ id, url, text }) => {
     if (type === LINK_MASKED) {
       return (
-        <li key={item.id} className="orderedlist__item">
+        <li key={id} className="orderedlist__item">
           <div className="orderedlist__item-dash" />
           <LinkMasked
-            linkData={item}
+            text={text}
+            url={url!}
             cssClasses={cssClassesLinkMasked}
             target="_blank"
           />
@@ -31,10 +37,10 @@ const OrderedList: FC<OrderedListProps> = ({
     }
 
     return (
-      <li key={item.id} className="orderedlist__item">
+      <li key={id} className="orderedlist__item">
         <div className="orderedlist__item-dash" />
-        <a href={item.url} target="_blank" className="orderedlist__text">
-          {item.text}
+        <a href={url} target="_blank" className="orderedlist__text">
+          {text}
         </a>
       </li>
     );

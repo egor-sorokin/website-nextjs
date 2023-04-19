@@ -11,7 +11,7 @@ interface ImageGridProps {
 }
 
 const ImageGrid: FC<ImageGridProps> = ({ gridData }) => {
-  const component = gridData?.map(({ id, url, image }, i) => (
+  const component = gridData.map(({ id, url, image }, i) => (
     <li key={id} className="image-grid__item item text-c-mercury">
       {i === 0 || i === 3 ? (
         <div

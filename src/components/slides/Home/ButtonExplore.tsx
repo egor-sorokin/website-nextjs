@@ -9,7 +9,7 @@ interface ButtonExploreProps {
 
 const ButtonExplore: FC<ButtonExploreProps> = ({
   cssClasses = '',
-  onClick = () => {},
+  onClick,
   children,
 }) => {
   const buttonRef = useRef<HTMLDivElement | null>(null);

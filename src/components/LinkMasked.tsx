@@ -1,27 +1,22 @@
 import { FC } from 'react';
 
-interface LinkMaskedProps {
-  linkData: {
-    url?: string;
-    text?: string;
-    name?: string;
-  };
-  cssClasses: string;
-  target: string;
+import { LinkProps } from '@/utils/types';
+
+interface LinkMaskedProps extends LinkProps {
+  cssClasses?: string;
+  target?: string;
 }
 
-const LinkMasked: FC<LinkMaskedProps> = ({ linkData, cssClasses, target }) => (
+const LinkMasked: FC<LinkMaskedProps> = ({ text, url, cssClasses, target }) => (
   <div className="link-masked">
-    <span className={`link-masked__placeholder ${cssClasses}`}>
-      {linkData.text}
-    </span>
+    <span className={`link-masked__placeholder ${cssClasses}`}>{text}</span>
     <div className="link-masked__mask">
       <a
-        href={linkData.url}
+        href={url}
         target={target}
         className={`link-masked__text ${cssClasses}`}
       >
-        {linkData.text}
+        {text}
       </a>
     </div>
   </div>
