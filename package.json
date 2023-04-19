@@ -2,6 +2,8 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Personal website",
+  "author": "Egor Sorokin",
+  "license": "ISC",
   "private": true,
   "homepage": "https://egor-sorokin.github.io/website/",
   "scripts": {
