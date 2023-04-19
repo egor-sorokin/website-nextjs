@@ -7,8 +7,13 @@ interface ButtonExploreProps {
   children?: ReactNode;
 }
 
-const ButtonExplore: FC<ButtonExploreProps> = ({ cssClasses = '', onClick = () => {}, children }) => {
+const ButtonExplore: FC<ButtonExploreProps> = ({
+  cssClasses = '',
+  onClick = () => {},
+  children
+}) => {
   const buttonRef = useRef<HTMLDivElement | null>(null);
+  const classNames = `${cssClasses} button button--white`;
 
   const handleClick = () => {
     onClick('projects', true);
@@ -21,8 +26,6 @@ const ButtonExplore: FC<ButtonExploreProps> = ({ cssClasses = '', onClick = () =
       buttonTween.to(buttonElement, { opacity: 1, y: 0, duration: 0.8 });
     }
   }, []);
-
-  const classNames = `${cssClasses} button button--white`;
 
   return (
     <div className={classNames} ref={buttonRef}>

@@ -9,22 +9,40 @@ interface OrderedListProps {
   type?: string;
 }
 
-const OrderedList: FC<OrderedListProps> = ({ title = '', items = [], type = '' }) => {
+const OrderedList: FC<OrderedListProps> = ({
+  title = '',
+  items = [],
+  type = ''
+}) => {
   const cssClassesLinkMasked = 'orderedlist__text font-s-18 text-c-mercury-light';
   const orderedListItems = items?.map((item) => {
     if (type === LINK_MASKED) {
       return (
-        <li key={item.id} className="orderedlist__item">
-          <div className="orderedlist__item-dash" />
-          <LinkMasked linkData={item} cssClasses={cssClassesLinkMasked} target="_blank" />
+        <li
+          key={item.id}
+          className="orderedlist__item"
+        >
+          <div className="orderedlist__item-dash"/>
+          <LinkMasked
+            linkData={item}
+            cssClasses={cssClassesLinkMasked}
+            target="_blank"
+          />
         </li>
       );
     }
 
     return (
-      <li key={item.id} className="orderedlist__item">
-        <div className="orderedlist__item-dash" />
-        <a href={item.url} target="_blank" className="orderedlist__text">
+      <li
+        key={item.id}
+        className="orderedlist__item"
+      >
+        <div className="orderedlist__item-dash"/>
+        <a
+          href={item.url}
+          target="_blank"
+          className="orderedlist__text"
+        >
           {item.text}
         </a>
       </li>

@@ -11,7 +11,11 @@ interface SwitcherProps {
   onClick?: (anchorId: string) => void;
 }
 
-const Switcher: FC<SwitcherProps> = ({ url = '', switcherLink, onClick = () => {} }) => {
+const Switcher: FC<SwitcherProps> = ({
+  url = '',
+  switcherLink,
+  onClick = () => {}
+}) => {
   let link: JSX.Element | null = null;
   let type;
   let text;
@@ -45,12 +49,12 @@ const Switcher: FC<SwitcherProps> = ({ url = '', switcherLink, onClick = () => {
     <div className={`switcher switcher--${type}`}>
       {link ? (
         <>
-          <div className="switcher__line line line--top" />
+          <div className="switcher__line line line--top"/>
           {link}
-          <div className="switcher__line line line--bottom" />
+          <div className="switcher__line line line--bottom"/>
         </>
       ) : (
-        <div className="switcher__line line line--full" />
+        <div className="switcher__line line line--full"/>
       )}
     </div>
   );

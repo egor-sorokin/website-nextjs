@@ -6,7 +6,10 @@ interface SummaryProps {
 
 const Summary: FC<SummaryProps> = ({ summary }) => {
   const summaryItems = summary.map((item, i) => (
-    <li key={i + 1} className="summary__item">
+    <li
+      key={i + 1}
+      className="summary__item"
+    >
       <h3 className="summary__title font-s-12-secondary">{item.title}</h3>
       <p className="summary__text font-s-16 font-f-sec font-w-r">{item.text}</p>
     </li>

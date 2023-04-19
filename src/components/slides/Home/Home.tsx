@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, FC } from 'react';
 import { TimelineMax } from 'gsap';
 
 import Switcher from '../../Switcher';
@@ -15,7 +15,10 @@ interface Props {
   toggleAboutSection: () => void;
 }
 
-const Home: React.FC<Props> = ({ person, toggleAboutSection = () => {} }) => {
+const Home: FC<Props> = ({
+  person,
+  toggleAboutSection = () => {}
+}) => {
   const homeRef = useRef<HTMLElement | null>(null);
   const homeTween = useRef<TimelineMax | null>(null);
 

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import DescriptionList from '@/components/DescriptionList';
 import ImageGrid from '@/components/ImageGrid';
 import Switcher from '@/components/Switcher';

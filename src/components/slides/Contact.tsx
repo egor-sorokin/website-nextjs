@@ -17,26 +17,24 @@ interface Props {
 }
 
 const Contact: FC<Props> = ({ person }) => (
-  <div>
-    <section className="banner contact">
-      <div className="contact-inner">
-        <div className="contact-inner__item">
-          <Navbar items={NAVBAR_ITEMS}/>
-          <div className="delimiter"/>
-        </div>
-        <div className="contact-inner__item">
-          <Logo/>
-        </div>
-        <div className="contact-inner__item">
-          <UnorderedList
-            title=""
-            items={person?.socials?.items || []}
-            type={LINK_MASKED}
-          />
-        </div>
+  <section className="banner contact">
+    <div className="contact-inner">
+      <div className="contact-inner__item">
+        <Navbar items={NAVBAR_ITEMS}/>
+        <div className="delimiter"/>
       </div>
-    </section>
-  </div>
+      <div className="contact-inner__item">
+        <Logo/>
+      </div>
+      <div className="contact-inner__item">
+        <UnorderedList
+          title=""
+          items={person?.socials?.items || []}
+          type={LINK_MASKED}
+        />
+      </div>
+    </div>
+  </section>
 );
 
 export default Contact;

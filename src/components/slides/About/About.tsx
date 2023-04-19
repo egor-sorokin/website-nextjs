@@ -31,8 +31,9 @@ const About: FC<Props> = ({
   person = {},
   isOpenedAbout,
   toggleAboutSection = () => {},
-}: Props) => {
+}) => {
   const aboutTween = useRef<TimelineMax | null>(null);
+  const socials = person?.socials || { title: '', items: [] };
 
   useEffect(() => {
     if (aboutTween.current === null) {
@@ -51,8 +52,6 @@ const About: FC<Props> = ({
   const clickCloseButton = () => {
     toggleAboutSection();
   };
-
-  const socials = person?.socials || { title: '', items: [] };
 
   return (
     <section className="about text-c-mercury-light">
