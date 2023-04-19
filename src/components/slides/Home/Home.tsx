@@ -15,10 +15,7 @@ interface Props {
   toggleAboutSection: () => void;
 }
 
-const Home: FC<Props> = ({
-  person,
-  toggleAboutSection = () => {}
-}) => {
+const Home: FC<Props> = ({ person, toggleAboutSection = () => {} }) => {
   const homeRef = useRef<HTMLElement | null>(null);
   const homeTween = useRef<TimelineMax | null>(null);
 
@@ -53,10 +50,7 @@ const Home: FC<Props> = ({
         {BUTTON_EXPLORE.text}
       </ButtonExplore>
 
-      <Switcher
-        switcherLink={SWITCHER_ABOUT}
-        onClick={clickAboutButton}
-      />
+      <Switcher switcherLink={SWITCHER_ABOUT} onClick={clickAboutButton} />
     </section>
   );
 };

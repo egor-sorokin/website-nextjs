@@ -6,7 +6,8 @@ export default function scrollToSection(section: string) {
     const endY = element.offsetTop;
     const distance = endY - startY;
     const duration = 500;
-    const easing = (t: number) => t<0.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t;
+    const easing = (t: number) =>
+      t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
     let start: number | null = null;
 
     const step = (timestamp: number) => {

@@ -14,7 +14,7 @@ interface SwitcherProps {
 const Switcher: FC<SwitcherProps> = ({
   url = '',
   switcherLink,
-  onClick = () => {}
+  onClick = () => {},
 }) => {
   let link: JSX.Element | null = null;
   let type;
@@ -49,12 +49,12 @@ const Switcher: FC<SwitcherProps> = ({
     <div className={`switcher switcher--${type}`}>
       {link ? (
         <>
-          <div className="switcher__line line line--top"/>
+          <div className="switcher__line line line--top" />
           {link}
-          <div className="switcher__line line line--bottom"/>
+          <div className="switcher__line line line--bottom" />
         </>
       ) : (
-        <div className="switcher__line line line--full"/>
+        <div className="switcher__line line line--full" />
       )}
     </div>
   );

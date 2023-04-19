@@ -35,4 +35,3 @@ export const NAVBAR_ITEMS = [
     type: 'white',
   },
 ];
-

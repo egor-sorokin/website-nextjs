@@ -16,7 +16,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dep-outdated": "npm outdated",
-    "dep-audit": "npm audit --omit=dev"
+    "dep-audit": "npm audit --omit=dev",
+    "prettier-check": "prettier --list-different 'src/**/*.{ts,tsx}'",
+    "prettier-fix": "prettier --list-different --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@next/font": "^13.3.0",
@@ -33,6 +35,8 @@
     "@types/node": "^18.15.11",
     "eslint": "^8.38.0",
     "eslint-config-next": "^13.3.0",
-    "gsap": "3.7.1"
+    "eslint-config-prettier": "^8.8.0",
+    "gsap": "3.7.1",
+    "prettier": "^2.8.7"
   }
 }

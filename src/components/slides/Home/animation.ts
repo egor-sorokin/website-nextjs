@@ -5,8 +5,16 @@ export const attachShowAnimation = (targetTween: any) => {
     .to('body', { overflowY: 'hidden' })
     .fromTo(
       '.home',
-      { backgroundColor: 'rgba(231, 231, 231, 0.6)', ease: Power2.easeOut, duration: 0.8 },
-      { backgroundColor: 'rgba(34, 32, 29, 1)', ease: Power2.easeOut, duration: 0.8 },
+      {
+        backgroundColor: 'rgba(231, 231, 231, 0.6)',
+        ease: Power2.easeOut,
+        duration: 0.8,
+      },
+      {
+        backgroundColor: 'rgba(34, 32, 29, 1)',
+        ease: Power2.easeOut,
+        duration: 0.8,
+      },
       0.35
     )
     .fromTo(

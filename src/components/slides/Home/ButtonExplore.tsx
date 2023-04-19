@@ -10,7 +10,7 @@ interface ButtonExploreProps {
 const ButtonExplore: FC<ButtonExploreProps> = ({
   cssClasses = '',
   onClick = () => {},
-  children
+  children,
 }) => {
   const buttonRef = useRef<HTMLDivElement | null>(null);
   const classNames = `${cssClasses} button button--white`;

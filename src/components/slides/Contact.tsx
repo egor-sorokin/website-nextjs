@@ -20,11 +20,11 @@ const Contact: FC<Props> = ({ person }) => (
   <section className="banner contact">
     <div className="contact-inner">
       <div className="contact-inner__item">
-        <Navbar items={NAVBAR_ITEMS}/>
-        <div className="delimiter"/>
+        <Navbar items={NAVBAR_ITEMS} />
+        <div className="delimiter" />
       </div>
       <div className="contact-inner__item">
-        <Logo/>
+        <Logo />
       </div>
       <div className="contact-inner__item">
         <UnorderedList

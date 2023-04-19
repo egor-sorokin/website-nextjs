@@ -16,4 +16,3 @@ export interface UnorderedListItem {
   text: string;
   name?: string;
 }
-

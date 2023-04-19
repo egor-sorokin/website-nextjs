@@ -8,15 +8,13 @@ interface DescriptionListProps {
 }
 
 const DescriptionList: FC<DescriptionListProps> = ({ listData }) => {
-  const cssClassesLinkMasked = 'link-masked--white font-f-sec font-s-20 text-c-l-dune';
+  const cssClassesLinkMasked =
+    'link-masked--white font-f-sec font-s-20 text-c-l-dune';
   let component: JSX.Element | JSX.Element[] = [];
 
   if (typeof listData === 'string') {
     component = (
-      <li
-        key={1 + listData}
-        className="description-list__item item"
-      >
+      <li key={1 + listData} className="description-list__item item">
         <p
           className="item__plain-text font-f-sec font-s-20 text-c-l-dune"
           dangerouslySetInnerHTML={{ __html: listData }}
@@ -25,10 +23,7 @@ const DescriptionList: FC<DescriptionListProps> = ({ listData }) => {
     );
   } else {
     component = listData.map((item: DescriptionItem, i: number) => (
-      <li
-        key={i + 1}
-        className="description-list__item item"
-      >
+      <li key={i + 1} className="description-list__item item">
         <h6 className="item__title font-s-12-secondary">{item.label}</h6>
         {item.url ? (
           <div className="item__link">
@@ -39,7 +34,9 @@ const DescriptionList: FC<DescriptionListProps> = ({ listData }) => {
             />
           </div>
         ) : (
-          <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">{item.text}</p>
+          <p className="item__plain-text font-f-sec font-s-20 text-c-l-dune">
+            {item.text}
+          </p>
         )}
       </li>
     ));
